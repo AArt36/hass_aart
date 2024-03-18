@@ -1,0 +1,2504 @@
+[
+    {
+        "id": "4e6b149c4af98ae0",
+        "type": "server-state-changed",
+        "z": "445b222ce59de656",
+        "name": "сцены выкл",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 5,
+        "outputs": 2,
+        "exposeAsEntityConfig": "",
+        "entityId": "input_boolean.stseny",
+        "entityIdType": "exact",
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "off",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 90,
+        "y": 1740,
+        "wires": [
+            [
+                "463f4fd43152abf4"
+            ],
+            [
+                "a2f5a8fd6d02bf49"
+            ]
+        ]
+    },
+    {
+        "id": "463f4fd43152abf4",
+        "type": "delay",
+        "z": "445b222ce59de656",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "2",
+        "timeoutUnits": "hours",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 90,
+        "y": 1800,
+        "wires": [
+            [
+                "48bb47b2fe761785"
+            ]
+        ]
+    },
+    {
+        "id": "48bb47b2fe761785",
+        "type": "api-call-service",
+        "z": "445b222ce59de656",
+        "name": "вкл",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "switch",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_boolean.stseny"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 230,
+        "y": 1800,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "65c281cb87f61ded",
+        "type": "comment",
+        "z": "445b222ce59de656",
+        "name": "Система сцен освещения",
+        "info": "",
+        "x": 130,
+        "y": 1560,
+        "wires": []
+    },
+    {
+        "id": "b693f23cced0db7a",
+        "type": "inject",
+        "z": "445b222ce59de656",
+        "name": "15 мин",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "*/15 10-22 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 1620,
+        "wires": [
+            [
+                "a2f5a8fd6d02bf49"
+            ]
+        ]
+    },
+    {
+        "id": "a2f5a8fd6d02bf49",
+        "type": "api-current-state",
+        "z": "445b222ce59de656",
+        "name": "сцены",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "input_boolean.stseny",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 350,
+        "y": 1620,
+        "wires": [
+            [
+                "6c253d1978707470",
+                "cb81f7b8ac13f729",
+                "5201c0a27a0510f0",
+                "de2bd05545a3636f",
+                "1b6e9f2a84b4ef83",
+                "ca93abb637a5275d",
+                "e796c845cc875883",
+                "37b9a6d1fdf0f9a2",
+                "0f67b90fceabbe96"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "7e61e0351582067d",
+        "type": "api-current-state",
+        "z": "445b222ce59de656",
+        "name": "Освещённость",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 3,
+        "outputs": 1,
+        "halt_if": "",
+        "halt_if_type": "num",
+        "halt_if_compare": "is",
+        "entity_id": "sensor.fikus_illuminance",
+        "state_type": "num",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            },
+            {
+                "property": "name",
+                "propertyType": "msg",
+                "value": "Освещённость",
+                "valueType": "str"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 940,
+        "y": 1620,
+        "wires": [
+            [
+                "22a1cf391dd5f062"
+            ]
+        ]
+    },
+    {
+        "id": "22a1cf391dd5f062",
+        "type": "switch",
+        "z": "445b222ce59de656",
+        "name": "День, вечер, ночь",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "lte",
+                "v": "1000",
+                "vt": "num"
+            },
+            {
+                "t": "btwn",
+                "v": "1001",
+                "vt": "num",
+                "v2": "6000",
+                "v2t": "num"
+            },
+            {
+                "t": "gte",
+                "v": "6001",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 1130,
+        "y": 1620,
+        "wires": [
+            [
+                "d5366346b9636767"
+            ],
+            [
+                "dac83cbe34637bb1"
+            ],
+            [
+                "e97786890dc259ec"
+            ]
+        ]
+    },
+    {
+        "id": "6c253d1978707470",
+        "type": "api-current-state",
+        "z": "445b222ce59de656",
+        "name": "Люстра прихожая",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "light.yeelink_color5_b476_light",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            },
+            {
+                "property": "name",
+                "propertyType": "msg",
+                "value": "Люстра прихожая",
+                "valueType": "str"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 750,
+        "y": 1620,
+        "wires": [
+            [
+                "7e61e0351582067d"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "cb81f7b8ac13f729",
+        "type": "api-current-state",
+        "z": "445b222ce59de656",
+        "name": "Люстра ванная",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "light.yeelink_color5_7325_light",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 740,
+        "y": 1760,
+        "wires": [
+            [
+                "62ce80079cff35a5"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "5201c0a27a0510f0",
+        "type": "api-current-state",
+        "z": "445b222ce59de656",
+        "name": "Торшерик ванная",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "light.torsherik",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 750,
+        "y": 1900,
+        "wires": [
+            [
+                "1a8e77011b49cdbe"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "0f67b90fceabbe96",
+        "type": "api-current-state",
+        "z": "445b222ce59de656",
+        "name": "Торшер кухня",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "light.torsher",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 740,
+        "y": 2320,
+        "wires": [
+            [
+                "13e95388a8e12469"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "37b9a6d1fdf0f9a2",
+        "type": "api-current-state",
+        "z": "445b222ce59de656",
+        "name": "Лампа кухня",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "light.lampa_na_kukhne",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 750,
+        "y": 2180,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "e796c845cc875883",
+        "type": "api-current-state",
+        "z": "445b222ce59de656",
+        "name": "Люстра кухня",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "light.yeelink_colorb_63c4_light",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 740,
+        "y": 2040,
+        "wires": [
+            [
+                "f7a07df9b38260c1"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "de2bd05545a3636f",
+        "type": "api-current-state",
+        "z": "445b222ce59de656",
+        "name": "Лампа комната",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "light.lampa_v_komnate",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 740,
+        "y": 2600,
+        "wires": [
+            [
+                "214b94af2bc1d698"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "ca93abb637a5275d",
+        "type": "api-current-state",
+        "z": "445b222ce59de656",
+        "name": "Люстра комната",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "light.liustra_v_komnate",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 750,
+        "y": 2460,
+        "wires": [
+            [
+                "205468ca9d977f66"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "d5366346b9636767",
+        "type": "api-call-service",
+        "z": "445b222ce59de656",
+        "name": "Оранжевый yeelink",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.yeelink_color5_b476_light"
+        ],
+        "data": "{\"rgb_color\":[255,65,0],\"transition\": \"30\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1360,
+        "y": 1580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dac83cbe34637bb1",
+        "type": "api-call-service",
+        "z": "445b222ce59de656",
+        "name": "Фиолетовый",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.yeelink_color5_b476_light"
+        ],
+        "data": "{\"rgb_color\":[209,2,255],\"transition\": \"30\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1330,
+        "y": 1620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e97786890dc259ec",
+        "type": "api-call-service",
+        "z": "445b222ce59de656",
+        "name": "Бирюзовый",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.yeelink_color5_b476_light"
+        ],
+        "data": "{\"rgb_color\":[5,212,255],\"transition\": \"30\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1330,
+        "y": 1660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9bad5c9daa8f4bea",
+        "type": "api-call-service",
+        "z": "445b222ce59de656",
+        "name": "Оранжевый gledopto",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.torsher"
+        ],
+        "data": "{\"rgb_color\":[255,145,0],\"transition\": \"30\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1360,
+        "y": 2320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "62ce80079cff35a5",
+        "type": "api-current-state",
+        "z": "445b222ce59de656",
+        "name": "Освещённость",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 3,
+        "outputs": 1,
+        "halt_if": "",
+        "halt_if_type": "num",
+        "halt_if_compare": "is",
+        "entity_id": "sensor.fikus_illuminance",
+        "state_type": "num",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            },
+            {
+                "property": "name",
+                "propertyType": "msg",
+                "value": "Освещённость",
+                "valueType": "str"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 940,
+        "y": 1760,
+        "wires": [
+            [
+                "4f9d1a71eb9291b7"
+            ]
+        ]
+    },
+    {
+        "id": "4f9d1a71eb9291b7",
+        "type": "switch",
+        "z": "445b222ce59de656",
+        "name": "День, вечер, ночь",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "lte",
+                "v": "1000",
+                "vt": "num"
+            },
+            {
+                "t": "btwn",
+                "v": "1001",
+                "vt": "num",
+                "v2": "6000",
+                "v2t": "num"
+            },
+            {
+                "t": "gte",
+                "v": "6001",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 1130,
+        "y": 1760,
+        "wires": [
+            [
+                "8a84058470f5a0fe"
+            ],
+            [
+                "87d3c1b63c1ee3bf"
+            ],
+            [
+                "1d7da72b5504ddb4"
+            ]
+        ]
+    },
+    {
+        "id": "1d7da72b5504ddb4",
+        "type": "api-call-service",
+        "z": "445b222ce59de656",
+        "name": "Бирюзовый",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.yeelink_color5_7325_light"
+        ],
+        "data": "{\"rgb_color\":[5,212,255],\"transition\": \"30\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1330,
+        "y": 1800,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8a84058470f5a0fe",
+        "type": "api-call-service",
+        "z": "445b222ce59de656",
+        "name": "Оранжевый yeelink",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.yeelink_color5_7325_light"
+        ],
+        "data": "{\"rgb_color\":[255,65,0],\"transition\": \"30\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1360,
+        "y": 1720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "87d3c1b63c1ee3bf",
+        "type": "api-call-service",
+        "z": "445b222ce59de656",
+        "name": "Фиолетовый",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.yeelink_color5_7325_light"
+        ],
+        "data": "{\"rgb_color\":[209,2,255],\"transition\": \"30\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1330,
+        "y": 1760,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1a8e77011b49cdbe",
+        "type": "api-current-state",
+        "z": "445b222ce59de656",
+        "name": "Освещённость",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 3,
+        "outputs": 1,
+        "halt_if": "",
+        "halt_if_type": "num",
+        "halt_if_compare": "is",
+        "entity_id": "sensor.fikus_illuminance",
+        "state_type": "num",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            },
+            {
+                "property": "name",
+                "propertyType": "msg",
+                "value": "Освещённость",
+                "valueType": "str"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 940,
+        "y": 1900,
+        "wires": [
+            [
+                "3a5cdf00df2a1401"
+            ]
+        ]
+    },
+    {
+        "id": "3a5cdf00df2a1401",
+        "type": "switch",
+        "z": "445b222ce59de656",
+        "name": "День, вечер, ночь",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "lte",
+                "v": "1000",
+                "vt": "num"
+            },
+            {
+                "t": "btwn",
+                "v": "1001",
+                "vt": "num",
+                "v2": "6000",
+                "v2t": "num"
+            },
+            {
+                "t": "gte",
+                "v": "6001",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 1130,
+        "y": 1900,
+        "wires": [
+            [
+                "b992adb3c03764ed"
+            ],
+            [
+                "be3797bd78ca3e39"
+            ],
+            [
+                "e6ee57755e968882"
+            ]
+        ]
+    },
+    {
+        "id": "b992adb3c03764ed",
+        "type": "api-call-service",
+        "z": "445b222ce59de656",
+        "name": "Фиолетовый",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "update.torsherik"
+        ],
+        "data": "{\"rgb_color\":[209,2,255],\"transition\": \"30\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1330,
+        "y": 1860,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e6ee57755e968882",
+        "type": "api-call-service",
+        "z": "445b222ce59de656",
+        "name": "Малиновый",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "update.torsherik"
+        ],
+        "data": "{\"rgb_color\":[255,1,88],\"transition\": \"30\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1330,
+        "y": 1940,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "be3797bd78ca3e39",
+        "type": "api-call-service",
+        "z": "445b222ce59de656",
+        "name": "Оранжевый gledopto",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.torsherik"
+        ],
+        "data": "{\"rgb_color\":[255,145,0],\"transition\": \"30\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1360,
+        "y": 1900,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "214b94af2bc1d698",
+        "type": "api-current-state",
+        "z": "445b222ce59de656",
+        "name": "Освещённость",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 3,
+        "outputs": 1,
+        "halt_if": "",
+        "halt_if_type": "num",
+        "halt_if_compare": "is",
+        "entity_id": "sensor.fikus_illuminance",
+        "state_type": "num",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            },
+            {
+                "property": "name",
+                "propertyType": "msg",
+                "value": "Освещённость",
+                "valueType": "str"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 940,
+        "y": 2600,
+        "wires": [
+            [
+                "d98452831dcf24f7"
+            ]
+        ]
+    },
+    {
+        "id": "d98452831dcf24f7",
+        "type": "switch",
+        "z": "445b222ce59de656",
+        "name": "День, вечер, ночь",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "lte",
+                "v": "1000",
+                "vt": "num"
+            },
+            {
+                "t": "btwn",
+                "v": "1001",
+                "vt": "num",
+                "v2": "6000",
+                "v2t": "num"
+            },
+            {
+                "t": "gte",
+                "v": "6001",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 1130,
+        "y": 2600,
+        "wires": [
+            [
+                "305049932964f278"
+            ],
+            [
+                "4a9992dc0f59e8c9"
+            ],
+            [
+                "067d625493d8c1e6"
+            ]
+        ]
+    },
+    {
+        "id": "d9ed9ca876669b3b",
+        "type": "server-state-changed",
+        "z": "445b222ce59de656",
+        "name": "Кнопка в прихожей",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 5,
+        "outputs": 2,
+        "exposeAsEntityConfig": "",
+        "entityId": "sensor.knopka_v_prikhozhei_action",
+        "entityIdType": "exact",
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "hold",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 110,
+        "y": 1680,
+        "wires": [
+            [
+                "a2f5a8fd6d02bf49"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "067d625493d8c1e6",
+        "type": "api-call-service",
+        "z": "445b222ce59de656",
+        "name": "Оранжевый gledopto",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.lampa_v_komnate"
+        ],
+        "data": "{\"rgb_color\":[255,145,0],\"transition\": \"30\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1360,
+        "y": 2640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4a9992dc0f59e8c9",
+        "type": "api-call-service",
+        "z": "445b222ce59de656",
+        "name": "Фиолетовый",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.lampa_v_komnate"
+        ],
+        "data": "{\"rgb_color\":[209,2,255],\"transition\": \"30\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1330,
+        "y": 2600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "305049932964f278",
+        "type": "api-call-service",
+        "z": "445b222ce59de656",
+        "name": "Малиновый",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.lampa_v_komnate"
+        ],
+        "data": "{\"rgb_color\":[255,1,88],\"transition\": \"30\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1330,
+        "y": 2560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1b6e9f2a84b4ef83",
+        "type": "api-current-state",
+        "z": "445b222ce59de656",
+        "name": "Свет комната",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "light.svet_komnata",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 740,
+        "y": 2700,
+        "wires": [
+            [
+                "8d0b46ed1c510ae6"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "8d0b46ed1c510ae6",
+        "type": "api-current-state",
+        "z": "445b222ce59de656",
+        "name": "Освещённость",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "5000",
+        "halt_if_type": "num",
+        "halt_if_compare": "lte",
+        "entity_id": "sensor.fikus_illuminance",
+        "state_type": "num",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            },
+            {
+                "property": "name",
+                "propertyType": "msg",
+                "value": "Освещённость",
+                "valueType": "str"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 940,
+        "y": 2700,
+        "wires": [
+            [
+                "46310d017d4373ef"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "46310d017d4373ef",
+        "type": "api-call-service",
+        "z": "445b222ce59de656",
+        "name": "Луна вкл",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.luna"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1100,
+        "y": 2700,
+        "wires": [
+            [
+                "5d0cf105dd2e69d0"
+            ]
+        ]
+    },
+    {
+        "id": "5d0cf105dd2e69d0",
+        "type": "api-current-state",
+        "z": "445b222ce59de656",
+        "name": "Проектор включен",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "home",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "device_tracker.d0_a4_6f_c7_9e_98",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 1270,
+        "y": 2700,
+        "wires": [
+            [],
+            [
+                "ac9c944440dd9742"
+            ]
+        ]
+    },
+    {
+        "id": "ac9c944440dd9742",
+        "type": "api-call-service",
+        "z": "445b222ce59de656",
+        "name": "Гирлянда вкл",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.girlianda"
+        ],
+        "data": "{\"transition\": 10, \"brightness_pct\": 100}",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1460,
+        "y": 2700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "205468ca9d977f66",
+        "type": "api-current-state",
+        "z": "445b222ce59de656",
+        "name": "Освещённость",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 3,
+        "outputs": 1,
+        "halt_if": "",
+        "halt_if_type": "num",
+        "halt_if_compare": "is",
+        "entity_id": "sensor.fikus_illuminance",
+        "state_type": "num",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            },
+            {
+                "property": "name",
+                "propertyType": "msg",
+                "value": "Освещённость",
+                "valueType": "str"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 940,
+        "y": 2460,
+        "wires": [
+            [
+                "4d9caa466ff02cd3"
+            ]
+        ]
+    },
+    {
+        "id": "4d9caa466ff02cd3",
+        "type": "switch",
+        "z": "445b222ce59de656",
+        "name": "День, вечер, ночь",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "lte",
+                "v": "1000",
+                "vt": "num"
+            },
+            {
+                "t": "btwn",
+                "v": "1001",
+                "vt": "num",
+                "v2": "6000",
+                "v2t": "num"
+            },
+            {
+                "t": "gte",
+                "v": "6001",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 1130,
+        "y": 2460,
+        "wires": [
+            [
+                "69874ff7552385fe"
+            ],
+            [
+                "b8a4545733cd934c"
+            ],
+            [
+                "779a3631ebff6f70"
+            ]
+        ]
+    },
+    {
+        "id": "69874ff7552385fe",
+        "type": "api-call-service",
+        "z": "445b222ce59de656",
+        "name": "Оранжевый yeelink",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.yeelink_color5_1992_light"
+        ],
+        "data": "{\"rgb_color\":[255,65,0],\"transition\": \"30\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1360,
+        "y": 2420,
+        "wires": [
+            [
+                "319e82aaa84a50d5"
+            ]
+        ]
+    },
+    {
+        "id": "3e8cd09f80d7a08f",
+        "type": "api-call-service",
+        "z": "445b222ce59de656",
+        "name": "Фиолетовый",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.yeelink_color5_67e3_light"
+        ],
+        "data": "{\"rgb_color\":[209,2,255],\"transition\": \"30\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1550,
+        "y": 2460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "319e82aaa84a50d5",
+        "type": "api-call-service",
+        "z": "445b222ce59de656",
+        "name": "Фиолетовый",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.yeelink_color5_67e3_light"
+        ],
+        "data": "{\"rgb_color\":[209,2,255],\"transition\": \"10\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1550,
+        "y": 2420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b8a4545733cd934c",
+        "type": "api-call-service",
+        "z": "445b222ce59de656",
+        "name": "Оранжевый yeelink",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.yeelink_color5_1992_light"
+        ],
+        "data": "{\"rgb_color\":[255,65,0],\"transition\": \"10\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1360,
+        "y": 2460,
+        "wires": [
+            [
+                "3e8cd09f80d7a08f"
+            ]
+        ]
+    },
+    {
+        "id": "779a3631ebff6f70",
+        "type": "api-call-service",
+        "z": "445b222ce59de656",
+        "name": "Бирюзовый",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.yeelink_color5_1992_light"
+        ],
+        "data": "{\"rgb_color\":[5,212,255],\"transition\": \"10\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1330,
+        "y": 2500,
+        "wires": [
+            [
+                "bfd9878b02a1c3e3"
+            ]
+        ]
+    },
+    {
+        "id": "bfd9878b02a1c3e3",
+        "type": "api-call-service",
+        "z": "445b222ce59de656",
+        "name": "Малиновый",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.yeelink_color5_67e3_light"
+        ],
+        "data": "{\"rgb_color\":[255,1,88],\"transition\": \"30\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1550,
+        "y": 2500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "13e95388a8e12469",
+        "type": "api-current-state",
+        "z": "445b222ce59de656",
+        "name": "Освещённость",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 3,
+        "outputs": 1,
+        "halt_if": "",
+        "halt_if_type": "num",
+        "halt_if_compare": "is",
+        "entity_id": "sensor.fikus_illuminance",
+        "state_type": "num",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            },
+            {
+                "property": "name",
+                "propertyType": "msg",
+                "value": "Освещённость",
+                "valueType": "str"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 940,
+        "y": 2320,
+        "wires": [
+            [
+                "9d84cff71f6b3090"
+            ]
+        ]
+    },
+    {
+        "id": "9d84cff71f6b3090",
+        "type": "switch",
+        "z": "445b222ce59de656",
+        "name": "День, вечер, ночь",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "lte",
+                "v": "1000",
+                "vt": "num"
+            },
+            {
+                "t": "btwn",
+                "v": "1001",
+                "vt": "num",
+                "v2": "6000",
+                "v2t": "num"
+            },
+            {
+                "t": "gte",
+                "v": "6001",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 1130,
+        "y": 2320,
+        "wires": [
+            [
+                "00606f80adcf77c8"
+            ],
+            [
+                "9bad5c9daa8f4bea"
+            ],
+            [
+                "02440f3fbb037265"
+            ]
+        ]
+    },
+    {
+        "id": "00606f80adcf77c8",
+        "type": "api-call-service",
+        "z": "445b222ce59de656",
+        "name": "Малиновый",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.torsher"
+        ],
+        "data": "{\"rgb_color\":[255,1,88],\"transition\": \"30\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1330,
+        "y": 2280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f7a07df9b38260c1",
+        "type": "api-current-state",
+        "z": "445b222ce59de656",
+        "name": "Освещённость",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 3,
+        "outputs": 1,
+        "halt_if": "",
+        "halt_if_type": "num",
+        "halt_if_compare": "is",
+        "entity_id": "sensor.fikus_illuminance",
+        "state_type": "num",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            },
+            {
+                "property": "name",
+                "propertyType": "msg",
+                "value": "Освещённость",
+                "valueType": "str"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 940,
+        "y": 2040,
+        "wires": [
+            [
+                "273a85729eb01a39"
+            ]
+        ]
+    },
+    {
+        "id": "273a85729eb01a39",
+        "type": "switch",
+        "z": "445b222ce59de656",
+        "name": "День, вечер, ночь",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "lte",
+                "v": "1000",
+                "vt": "num"
+            },
+            {
+                "t": "btwn",
+                "v": "1001",
+                "vt": "num",
+                "v2": "6000",
+                "v2t": "num"
+            },
+            {
+                "t": "gte",
+                "v": "6001",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 1130,
+        "y": 2040,
+        "wires": [
+            [
+                "ac7322912f9ea4f2"
+            ],
+            [
+                "55c5347ec84034d3"
+            ],
+            [
+                "697534cb32fb285f"
+            ]
+        ]
+    },
+    {
+        "id": "c908fdaed83b15f3",
+        "type": "api-current-state",
+        "z": "445b222ce59de656",
+        "name": "Освещённость",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 3,
+        "outputs": 1,
+        "halt_if": "",
+        "halt_if_type": "num",
+        "halt_if_compare": "is",
+        "entity_id": "sensor.fikus_illuminance",
+        "state_type": "num",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            },
+            {
+                "property": "name",
+                "propertyType": "msg",
+                "value": "Освещённость",
+                "valueType": "str"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 940,
+        "y": 2180,
+        "wires": [
+            [
+                "7df8d488da2cb086"
+            ]
+        ]
+    },
+    {
+        "id": "7df8d488da2cb086",
+        "type": "switch",
+        "z": "445b222ce59de656",
+        "name": "День, вечер, ночь",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "lte",
+                "v": "1000",
+                "vt": "num"
+            },
+            {
+                "t": "btwn",
+                "v": "1001",
+                "vt": "num",
+                "v2": "6000",
+                "v2t": "num"
+            },
+            {
+                "t": "gte",
+                "v": "6001",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 1130,
+        "y": 2180,
+        "wires": [
+            [
+                "a27ca5f5a6f2a4cc"
+            ],
+            [
+                "ad351e57f50ce876"
+            ],
+            [
+                "af554e1684d379bd"
+            ]
+        ]
+    },
+    {
+        "id": "af554e1684d379bd",
+        "type": "api-call-service",
+        "z": "445b222ce59de656",
+        "name": "Оранжевый gledopto",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.lampa_na_kukhne"
+        ],
+        "data": "{\"rgb_color\":[255,145,0],\"transition\": \"30\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1360,
+        "y": 2220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ac7322912f9ea4f2",
+        "type": "api-call-service",
+        "z": "445b222ce59de656",
+        "name": "Фиолетовый",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.yeelink_colorb_63c4_light"
+        ],
+        "data": "{\"rgb_color\":[209,2,255],\"transition\": \"30\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1330,
+        "y": 2000,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ad351e57f50ce876",
+        "type": "api-call-service",
+        "z": "445b222ce59de656",
+        "name": "Фиолетовый",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.lampa_na_kukhne"
+        ],
+        "data": "{\"rgb_color\":[209,2,255],\"transition\": \"30\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1330,
+        "y": 2180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "55c5347ec84034d3",
+        "type": "api-call-service",
+        "z": "445b222ce59de656",
+        "name": "Оранжевый yeelink",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.yeelink_colorb_63c4_light"
+        ],
+        "data": "{\"rgb_color\":[255,65,0],\"transition\": \"30\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1360,
+        "y": 2040,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "02440f3fbb037265",
+        "type": "api-call-service",
+        "z": "445b222ce59de656",
+        "name": "Фиолетовый",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.torsher"
+        ],
+        "data": "{\"rgb_color\":[209,2,255],\"transition\": \"30\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1330,
+        "y": 2360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a27ca5f5a6f2a4cc",
+        "type": "api-call-service",
+        "z": "445b222ce59de656",
+        "name": "Оранжевый gledopto",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.lampa_na_kukhne"
+        ],
+        "data": "{\"rgb_color\":[255,145,0],\"transition\": \"30\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1360,
+        "y": 2140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "697534cb32fb285f",
+        "type": "api-call-service",
+        "z": "445b222ce59de656",
+        "name": "Бирюзовый",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.yeelink_colorb_63c4_light"
+        ],
+        "data": "{\"rgb_color\":[5,212,255],\"transition\": \"30\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1330,
+        "y": 2080,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "50cc03bcc6d5c2a8",
+        "type": "server-state-changed",
+        "z": "445b222ce59de656",
+        "name": "Интерфейс кнопка ночь",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 5,
+        "outputs": 1,
+        "exposeAsEntityConfig": "",
+        "entityId": "input_button.osveshchenie_noch",
+        "entityIdType": "exact",
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 130,
+        "y": 1880,
+        "wires": [
+            [
+                "d5366346b9636767",
+                "8a84058470f5a0fe",
+                "b992adb3c03764ed",
+                "ac7322912f9ea4f2",
+                "a27ca5f5a6f2a4cc",
+                "00606f80adcf77c8",
+                "69874ff7552385fe",
+                "319e82aaa84a50d5",
+                "305049932964f278"
+            ]
+        ]
+    },
+    {
+        "id": "01986823f1ee7e16",
+        "type": "server-state-changed",
+        "z": "445b222ce59de656",
+        "name": "Интерфейс кнопка вечер",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 5,
+        "outputs": 1,
+        "exposeAsEntityConfig": "",
+        "entityId": "input_button.osveshchenie_vecher",
+        "entityIdType": "exact",
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 130,
+        "y": 1940,
+        "wires": [
+            [
+                "dac83cbe34637bb1",
+                "87d3c1b63c1ee3bf",
+                "be3797bd78ca3e39",
+                "55c5347ec84034d3",
+                "ad351e57f50ce876",
+                "9bad5c9daa8f4bea",
+                "b8a4545733cd934c",
+                "3e8cd09f80d7a08f",
+                "4a9992dc0f59e8c9",
+                "46310d017d4373ef"
+            ]
+        ]
+    },
+    {
+        "id": "511c344627cc2276",
+        "type": "server-state-changed",
+        "z": "445b222ce59de656",
+        "name": "Интерфейс кнопка день",
+        "server": "d1cf8bd60e4ddc69",
+        "version": 5,
+        "outputs": 1,
+        "exposeAsEntityConfig": "",
+        "entityId": "input_button.osveshchenie_den",
+        "entityIdType": "exact",
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 130,
+        "y": 2000,
+        "wires": [
+            [
+                "e97786890dc259ec",
+                "1d7da72b5504ddb4",
+                "e6ee57755e968882",
+                "697534cb32fb285f",
+                "af554e1684d379bd",
+                "02440f3fbb037265",
+                "779a3631ebff6f70",
+                "bfd9878b02a1c3e3",
+                "067d625493d8c1e6",
+                "46310d017d4373ef"
+            ]
+        ]
+    },
+    {
+        "id": "d1cf8bd60e4ddc69",
+        "type": "server",
+        "name": "Home Assistant",
+        "version": 5,
+        "addon": true,
+        "rejectUnauthorizedCerts": true,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true,
+        "heartbeat": false,
+        "heartbeatInterval": "30",
+        "areaSelector": "friendlyName",
+        "deviceSelector": "friendlyName",
+        "entitySelector": "friendlyName",
+        "statusSeparator": ": ",
+        "statusYear": "hidden",
+        "statusMonth": "short",
+        "statusDay": "numeric",
+        "statusHourCycle": "default",
+        "statusTimeFormat": "h:m",
+        "enableGlobalContextStore": false
+    }
+]
