@@ -1,107 +1,5 @@
 [
     {
-        "id": "303a593a0ea0d231",
-        "type": "server-state-changed",
-        "z": "445b222ce59de656",
-        "name": "Движение на кухне",
-        "server": "d1cf8bd60e4ddc69",
-        "version": 5,
-        "outputs": 2,
-        "exposeAsEntityConfig": "e86c513e9c26ac81",
-        "entityId": "binary_sensor.dvizhenie_kukhnia_occupancy",
-        "entityIdType": "exact",
-        "outputInitially": false,
-        "stateType": "str",
-        "ifState": "on",
-        "ifStateType": "str",
-        "ifStateOperator": "is",
-        "outputOnlyOnStateChange": true,
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "ignorePrevStateNull": false,
-        "ignorePrevStateUnknown": false,
-        "ignorePrevStateUnavailable": false,
-        "ignoreCurrentStateUnknown": false,
-        "ignoreCurrentStateUnavailable": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "eventData"
-            },
-            {
-                "property": "topic",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "triggerId"
-            }
-        ],
-        "x": 114.0000228881836,
-        "y": 561.9999809265137,
-        "wires": [
-            [
-                "3452f491bb79a103",
-                "4fdf7a9b98f34933"
-            ],
-            [
-                "daa98e9954ee0b66"
-            ]
-        ]
-    },
-    {
-        "id": "3452f491bb79a103",
-        "type": "api-current-state",
-        "z": "445b222ce59de656",
-        "name": "вкл?",
-        "server": "d1cf8bd60e4ddc69",
-        "version": 3,
-        "outputs": 2,
-        "halt_if": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "light.svet_kukhnia",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "override_topic": false,
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "x": 274.0000228881836,
-        "y": 561.9999809265137,
-        "wires": [
-            [],
-            [
-                "ab64ca60ca9716f1"
-            ]
-        ]
-    },
-    {
         "id": "5f65b89cb2dbf358",
         "type": "server-state-changed",
         "z": "445b222ce59de656",
@@ -147,7 +45,7 @@
             }
         ],
         "x": 120,
-        "y": 960,
+        "y": 400,
         "wires": [
             [
                 "86c70aba2217b603",
@@ -195,220 +93,12 @@
         "entity_location": "data",
         "override_data": "msg",
         "x": 290,
-        "y": 920,
+        "y": 360,
         "wires": [
             [],
             [
                 "ce21653eef04b7ae"
             ]
-        ]
-    },
-    {
-        "id": "b5528304df89ab6b",
-        "type": "server-state-changed",
-        "z": "445b222ce59de656",
-        "name": "Движение ванная",
-        "server": "d1cf8bd60e4ddc69",
-        "version": 5,
-        "outputs": 2,
-        "exposeAsEntityConfig": "8d31c4e60da2b0d1",
-        "entityId": "binary_sensor.dvizhenie_v_vannoi_occupancy",
-        "entityIdType": "exact",
-        "outputInitially": false,
-        "stateType": "str",
-        "ifState": "on",
-        "ifStateType": "str",
-        "ifStateOperator": "is",
-        "outputOnlyOnStateChange": true,
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "ignorePrevStateNull": false,
-        "ignorePrevStateUnknown": false,
-        "ignorePrevStateUnavailable": false,
-        "ignoreCurrentStateUnknown": false,
-        "ignoreCurrentStateUnavailable": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "eventData"
-            },
-            {
-                "property": "topic",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "triggerId"
-            }
-        ],
-        "x": 110,
-        "y": 1220,
-        "wires": [
-            [
-                "5d706625b40e722c",
-                "72b1b30e19e3ff9b"
-            ],
-            [
-                "793b7b2a5b741487"
-            ]
-        ]
-    },
-    {
-        "id": "5d706625b40e722c",
-        "type": "api-current-state",
-        "z": "445b222ce59de656",
-        "name": "Свет",
-        "server": "d1cf8bd60e4ddc69",
-        "version": 3,
-        "outputs": 2,
-        "halt_if": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "light.svet_vannaia",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "override_topic": false,
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "x": 290,
-        "y": 1220,
-        "wires": [
-            [],
-            [
-                "3e274383bbea947f"
-            ]
-        ]
-    },
-    {
-        "id": "793b7b2a5b741487",
-        "type": "delay",
-        "z": "445b222ce59de656",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "6",
-        "timeoutUnits": "minutes",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 120,
-        "y": 1320,
-        "wires": [
-            [
-                "010cfb5ca986fad2"
-            ]
-        ]
-    },
-    {
-        "id": "a5c45bda908dcac1",
-        "type": "api-call-service",
-        "z": "445b222ce59de656",
-        "name": "Выкл",
-        "server": "d1cf8bd60e4ddc69",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "light",
-        "service": "turn_off",
-        "areaId": [
-            "vanna"
-        ],
-        "deviceId": [],
-        "entityId": [],
-        "data": "{\"transition\": 15}",
-        "dataType": "jsonata",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 470,
-        "y": 1320,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "72b1b30e19e3ff9b",
-        "type": "change",
-        "z": "445b222ce59de656",
-        "name": "Сброс",
-        "rules": [
-            {
-                "t": "set",
-                "p": "reset",
-                "pt": "msg",
-                "to": "reset",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 140,
-        "y": 1280,
-        "wires": [
-            [
-                "793b7b2a5b741487"
-            ]
-        ]
-    },
-    {
-        "id": "813e31755ee291b1",
-        "type": "api-call-service",
-        "z": "445b222ce59de656",
-        "name": "Выкл",
-        "server": "d1cf8bd60e4ddc69",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "light",
-        "service": "turn_off",
-        "areaId": [
-            "kukhnia"
-        ],
-        "deviceId": [],
-        "entityId": [],
-        "data": "{\"transition\": 15}",
-        "dataType": "jsonata",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 574.0000228881836,
-        "y": 741.9999809265137,
-        "wires": [
-            []
         ]
     },
     {
@@ -431,7 +121,7 @@
         "to": "",
         "reg": false,
         "x": 140,
-        "y": 1020,
+        "y": 460,
         "wires": [
             [
                 "19922880c096585d"
@@ -456,7 +146,7 @@
         "allowrate": false,
         "outputs": 1,
         "x": 120,
-        "y": 1060,
+        "y": 500,
         "wires": [
             [
                 "d23f55f23b2a89a8"
@@ -485,7 +175,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 290,
-        "y": 1060,
+        "y": 500,
         "wires": [
             []
         ]
@@ -512,7 +202,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 640,
-        "y": 880,
+        "y": 320,
         "wires": [
             [
                 "19922880c096585d"
@@ -565,7 +255,7 @@
             }
         ],
         "x": 450,
-        "y": 900,
+        "y": 340,
         "wires": [
             [
                 "3107d410a37bc8e4"
@@ -644,194 +334,6 @@
             [],
             [
                 "10f219f467e73738"
-            ]
-        ]
-    },
-    {
-        "id": "78351ab0e6b3625b",
-        "type": "server-state-changed",
-        "z": "445b222ce59de656",
-        "name": "Ящик",
-        "server": "d1cf8bd60e4ddc69",
-        "version": 5,
-        "outputs": 2,
-        "exposeAsEntityConfig": "7427c31c14152555",
-        "entityId": "binary_sensor.iashchichek_contact",
-        "entityIdType": "exact",
-        "outputInitially": false,
-        "stateType": "str",
-        "ifState": "on",
-        "ifStateType": "str",
-        "ifStateOperator": "is",
-        "outputOnlyOnStateChange": true,
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "ignorePrevStateNull": false,
-        "ignorePrevStateUnknown": false,
-        "ignorePrevStateUnavailable": false,
-        "ignoreCurrentStateUnknown": false,
-        "ignoreCurrentStateUnavailable": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "eventData"
-            },
-            {
-                "property": "topic",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "triggerId"
-            }
-        ],
-        "x": 70,
-        "y": 1460,
-        "wires": [
-            [
-                "6b3297bf7466b2e2"
-            ],
-            [
-                "6d59b4c9f492dcd4"
-            ]
-        ]
-    },
-    {
-        "id": "d1157362659d10a6",
-        "type": "api-call-service",
-        "z": "445b222ce59de656",
-        "name": "Луна вкл",
-        "server": "d1cf8bd60e4ddc69",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "light",
-        "service": "turn_on",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "light.luna"
-        ],
-        "data": "",
-        "dataType": "jsonata",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 440,
-        "y": 1440,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "6b3297bf7466b2e2",
-        "type": "api-call-service",
-        "z": "445b222ce59de656",
-        "name": "Лампа белый",
-        "server": "d1cf8bd60e4ddc69",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "light",
-        "service": "turn_on",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "light.lampa_v_komnate"
-        ],
-        "data": "{\"kelvin\": \"5000\",\"transition\": \"3\",\"brightness_pct\":\"100\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 240,
-        "y": 1440,
-        "wires": [
-            [
-                "d1157362659d10a6"
-            ]
-        ]
-    },
-    {
-        "id": "6d59b4c9f492dcd4",
-        "type": "api-current-state",
-        "z": "445b222ce59de656",
-        "name": "Освещённость",
-        "server": "d1cf8bd60e4ddc69",
-        "version": 3,
-        "outputs": 2,
-        "halt_if": "6000",
-        "halt_if_type": "num",
-        "halt_if_compare": "lte",
-        "entity_id": "sensor.fikus_illuminance",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "override_topic": false,
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "x": 240,
-        "y": 1500,
-        "wires": [
-            [
-                "de2bd05545a3636f"
-            ],
-            [
-                "36cb6dca169fa91f"
-            ]
-        ]
-    },
-    {
-        "id": "36cb6dca169fa91f",
-        "type": "api-call-service",
-        "z": "445b222ce59de656",
-        "name": "Луна выкл",
-        "server": "d1cf8bd60e4ddc69",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "light",
-        "service": "turn_off",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "light.luna"
-        ],
-        "data": "",
-        "dataType": "jsonata",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 450,
-        "y": 1500,
-        "wires": [
-            [
-                "de2bd05545a3636f"
             ]
         ]
     },
@@ -919,51 +421,6 @@
         "x": 270,
         "y": 80,
         "wires": [
-            []
-        ]
-    },
-    {
-        "id": "010cfb5ca986fad2",
-        "type": "api-current-state",
-        "z": "445b222ce59de656",
-        "name": "влажность",
-        "server": "d1cf8bd60e4ddc69",
-        "version": 3,
-        "outputs": 2,
-        "halt_if": "60",
-        "halt_if_type": "num",
-        "halt_if_compare": "lte",
-        "entity_id": "sensor.temperatura_i_vlazhnost_vannaia_humidity",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "override_topic": false,
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "x": 310,
-        "y": 1320,
-        "wires": [
-            [
-                "a5c45bda908dcac1"
-            ],
             []
         ]
     },
@@ -1155,43 +612,13 @@
         "wires": []
     },
     {
-        "id": "6845f6a888988a7a",
-        "type": "comment",
-        "z": "445b222ce59de656",
-        "name": "Любимая прихорашивается",
-        "info": "",
-        "x": 140,
-        "y": 1400,
-        "wires": []
-    },
-    {
-        "id": "48bcbcbbf4b733a7",
-        "type": "comment",
-        "z": "445b222ce59de656",
-        "name": "Свет кухня",
-        "info": "",
-        "x": 90,
-        "y": 520,
-        "wires": []
-    },
-    {
         "id": "7bd6293cf28d7798",
         "type": "comment",
         "z": "445b222ce59de656",
         "name": "Свет прихожая",
         "info": "",
         "x": 100,
-        "y": 920,
-        "wires": []
-    },
-    {
-        "id": "9ab4aa632d6285e3",
-        "type": "comment",
-        "z": "445b222ce59de656",
-        "name": "Свет ванная",
-        "info": "",
-        "x": 90,
-        "y": 1180,
+        "y": 360,
         "wires": []
     },
     {
@@ -1362,103 +789,6 @@
         "x": 1310,
         "y": 220,
         "wires": [
-            []
-        ]
-    },
-    {
-        "id": "4fdf7a9b98f34933",
-        "type": "change",
-        "z": "445b222ce59de656",
-        "name": "Сброс",
-        "rules": [
-            {
-                "t": "set",
-                "p": "reset",
-                "pt": "msg",
-                "to": "reset",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 174.0000228881836,
-        "y": 701.9999809265137,
-        "wires": [
-            [
-                "daa98e9954ee0b66"
-            ]
-        ]
-    },
-    {
-        "id": "daa98e9954ee0b66",
-        "type": "delay",
-        "z": "445b222ce59de656",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "5",
-        "timeoutUnits": "minutes",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 144.0000228881836,
-        "y": 741.9999809265137,
-        "wires": [
-            [
-                "064ed3958569dfa3"
-            ]
-        ]
-    },
-    {
-        "id": "064ed3958569dfa3",
-        "type": "api-current-state",
-        "z": "445b222ce59de656",
-        "name": "FP1",
-        "server": "d1cf8bd60e4ddc69",
-        "version": 3,
-        "outputs": 2,
-        "halt_if": "off",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "binary_sensor.fp1_presence",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "for": "4",
-        "forType": "num",
-        "forUnits": "minutes",
-        "override_topic": false,
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "x": 294.0000228881836,
-        "y": 741.9999809265137,
-        "wires": [
-            [
-                "75d6713313c7559c"
-            ],
             []
         ]
     },
@@ -1646,1270 +976,6 @@
         ]
     },
     {
-        "id": "75d6713313c7559c",
-        "type": "ha-wait-until",
-        "z": "445b222ce59de656",
-        "name": "off",
-        "server": "d1cf8bd60e4ddc69",
-        "version": 2,
-        "outputs": 1,
-        "entityId": "binary_sensor.fp1_presence",
-        "entityIdFilterType": "exact",
-        "property": "state",
-        "comparator": "is",
-        "value": "off",
-        "valueType": "str",
-        "timeout": "0",
-        "timeoutType": "num",
-        "timeoutUnits": "seconds",
-        "checkCurrentState": true,
-        "blockInputOverrides": true,
-        "outputProperties": [],
-        "entityLocation": "data",
-        "entityLocationType": "none",
-        "x": 434.0000228881836,
-        "y": 741.9999809265137,
-        "wires": [
-            [
-                "813e31755ee291b1"
-            ]
-        ]
-    },
-    {
-        "id": "f49726f90d3a0a03",
-        "type": "api-current-state",
-        "z": "445b222ce59de656",
-        "name": "Разгорание день",
-        "server": "d1cf8bd60e4ddc69",
-        "version": 3,
-        "outputs": 1,
-        "halt_if": "",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "input_number.osveshchenie_razgoranie_dniom",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            },
-            {
-                "property": "Разгорание_день",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            }
-        ],
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "override_topic": false,
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "x": 934.0000228881836,
-        "y": 561.9999809265137,
-        "wires": [
-            [
-                "78f2d39cdbae8b5c"
-            ]
-        ]
-    },
-    {
-        "id": "aea7e44269c559b4",
-        "type": "api-current-state",
-        "z": "445b222ce59de656",
-        "name": "Яркость день",
-        "server": "d1cf8bd60e4ddc69",
-        "version": 3,
-        "outputs": 1,
-        "halt_if": "",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "input_number.osveshchenie_iarkost_dniom",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            },
-            {
-                "property": "Яркость_день",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            }
-        ],
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "override_topic": false,
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "x": 704.0000228881836,
-        "y": 561.9999809265137,
-        "wires": [
-            [
-                "bfd7afdbd903d159"
-            ]
-        ]
-    },
-    {
-        "id": "ab64ca60ca9716f1",
-        "type": "api-current-state",
-        "z": "445b222ce59de656",
-        "name": "Освещённость",
-        "server": "d1cf8bd60e4ddc69",
-        "version": 3,
-        "outputs": 1,
-        "halt_if": "",
-        "halt_if_type": "num",
-        "halt_if_compare": "is",
-        "entity_id": "sensor.obshchaia_osveshchionnost",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            },
-            {
-                "property": "Освещённость",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            }
-        ],
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "override_topic": false,
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "x": 464.0000228881836,
-        "y": 561.9999809265137,
-        "wires": [
-            [
-                "e8804d44227eabb4"
-            ]
-        ]
-    },
-    {
-        "id": "e8804d44227eabb4",
-        "type": "api-current-state",
-        "z": "445b222ce59de656",
-        "name": "Сон вкл",
-        "server": "d1cf8bd60e4ddc69",
-        "version": 3,
-        "outputs": 1,
-        "halt_if": "",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "input_boolean.rezhim_son",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            },
-            {
-                "property": "сон",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            }
-        ],
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "override_topic": false,
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "x": 484.0000228881836,
-        "y": 621.9999809265137,
-        "wires": [
-            [
-                "aea7e44269c559b4"
-            ]
-        ]
-    },
-    {
-        "id": "bfd7afdbd903d159",
-        "type": "api-current-state",
-        "z": "445b222ce59de656",
-        "name": "Яркость вечер",
-        "server": "d1cf8bd60e4ddc69",
-        "version": 3,
-        "outputs": 1,
-        "halt_if": "",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "input_number.osveshchenie_iarkost_vecherom",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            },
-            {
-                "property": "Яркость_вечер",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            }
-        ],
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "override_topic": false,
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "x": 704.0000228881836,
-        "y": 601.9999809265137,
-        "wires": [
-            [
-                "fbca092080a6e6e5"
-            ]
-        ]
-    },
-    {
-        "id": "fbca092080a6e6e5",
-        "type": "api-current-state",
-        "z": "445b222ce59de656",
-        "name": "Яркость ночь",
-        "server": "d1cf8bd60e4ddc69",
-        "version": 3,
-        "outputs": 1,
-        "halt_if": "",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "input_number.osveshchenie_iarkost_nochiu",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            },
-            {
-                "property": "Яркость_ночь",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            }
-        ],
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "override_topic": false,
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "x": 704.0000228881836,
-        "y": 641.9999809265137,
-        "wires": [
-            [
-                "ea920b7f24862e55"
-            ]
-        ]
-    },
-    {
-        "id": "ea920b7f24862e55",
-        "type": "api-current-state",
-        "z": "445b222ce59de656",
-        "name": "Яркость сон",
-        "server": "d1cf8bd60e4ddc69",
-        "version": 3,
-        "outputs": 1,
-        "halt_if": "",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "input_number.osveshchenie_iarkost_son",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            },
-            {
-                "property": "Яркость_сон",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            }
-        ],
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "override_topic": false,
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "x": 694.0000228881836,
-        "y": 681.9999809265137,
-        "wires": [
-            [
-                "f49726f90d3a0a03"
-            ]
-        ]
-    },
-    {
-        "id": "78f2d39cdbae8b5c",
-        "type": "api-current-state",
-        "z": "445b222ce59de656",
-        "name": "Разгорание вечер",
-        "server": "d1cf8bd60e4ddc69",
-        "version": 3,
-        "outputs": 1,
-        "halt_if": "",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "input_number.osveshchenie_razgoranie_vecherom",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            },
-            {
-                "property": "Разгорание_вечер",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            }
-        ],
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "override_topic": false,
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "x": 934.0000228881836,
-        "y": 601.9999809265137,
-        "wires": [
-            [
-                "a22b90111efaf55c"
-            ]
-        ]
-    },
-    {
-        "id": "a22b90111efaf55c",
-        "type": "api-current-state",
-        "z": "445b222ce59de656",
-        "name": "Разгорание ночь",
-        "server": "d1cf8bd60e4ddc69",
-        "version": 3,
-        "outputs": 1,
-        "halt_if": "",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "input_number.osveshchenie_razgoranie_nochiu",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            },
-            {
-                "property": "Разгорание_ночь",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            }
-        ],
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "override_topic": false,
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "x": 934.0000228881836,
-        "y": 641.9999809265137,
-        "wires": [
-            [
-                "93f1b1c8665dbd51"
-            ]
-        ]
-    },
-    {
-        "id": "93f1b1c8665dbd51",
-        "type": "api-current-state",
-        "z": "445b222ce59de656",
-        "name": "Разгорание сон",
-        "server": "d1cf8bd60e4ddc69",
-        "version": 3,
-        "outputs": 1,
-        "halt_if": "",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "input_number.osveshchenie_razgoranie_son",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            },
-            {
-                "property": "Разгорание_сон",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            }
-        ],
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "override_topic": false,
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "x": 924.0000228881836,
-        "y": 681.9999809265137,
-        "wires": [
-            [
-                "825eea932cbd2749"
-            ]
-        ]
-    },
-    {
-        "id": "95776bd787502879",
-        "type": "api-call-service",
-        "z": "445b222ce59de656",
-        "name": "Свет на кухне",
-        "server": "d1cf8bd60e4ddc69",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "light",
-        "service": "turn_on",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "light.lampa_na_kukhne",
-            "light.torsher"
-        ],
-        "data": "{\t    \"transition\": time,\t    \"brightness_pct\": bright\t}\t",
-        "dataType": "jsonata",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 1160,
-        "y": 620,
-        "wires": [
-            [
-                "81d1e47e6c49cb67",
-                "0329d899525aa81f"
-            ]
-        ]
-    },
-    {
-        "id": "81d1e47e6c49cb67",
-        "type": "api-current-state",
-        "z": "445b222ce59de656",
-        "name": "Сон вкл",
-        "server": "d1cf8bd60e4ddc69",
-        "version": 3,
-        "outputs": 2,
-        "halt_if": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "input_boolean.rezhim_son",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "override_topic": false,
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "x": 1400,
-        "y": 560,
-        "wires": [
-            [],
-            [
-                "d33b2bf3510c6fa9"
-            ]
-        ]
-    },
-    {
-        "id": "d33b2bf3510c6fa9",
-        "type": "delay",
-        "z": "445b222ce59de656",
-        "name": "",
-        "pauseType": "delayv",
-        "timeout": "1",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 1410,
-        "y": 620,
-        "wires": [
-            [
-                "8da9cd07545d2c5c"
-            ]
-        ]
-    },
-    {
-        "id": "8da9cd07545d2c5c",
-        "type": "api-call-service",
-        "z": "445b222ce59de656",
-        "name": "Гирлянда",
-        "server": "d1cf8bd60e4ddc69",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "light",
-        "service": "turn_on",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "light.girlianda_na_kukhne"
-        ],
-        "data": "",
-        "dataType": "jsonata",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 1400,
-        "y": 680,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "825eea932cbd2749",
-        "type": "function",
-        "z": "445b222ce59de656",
-        "name": "function 15",
-        "func": "// Функция для автоматического определения параметров освещения и передачи соответствующих значений\nvar brightness_pct = 100; // Значение яркости по умолчанию\nvar transition = 5; // Значение времени перехода по умолчанию\nvar timeOfDay = \"\"; // Время суток\n\n// Определение времени суток на основе текущей освещенности\nif (msg.Освещённость >= 60) { // День\n    timeOfDay = \"день\";\n    transition = parseFloat(msg.Разгорание_день);\n    brightness_pct = parseFloat(msg.Яркость_день);\n} else if (msg.Освещённость >= 40) { // Вечер\n    timeOfDay = \"вечер\";\n    transition = parseFloat(msg.Разгорание_вечер);\n    brightness_pct = parseFloat(msg.Яркость_вечер);\n} else { // Ночь\n    timeOfDay = \"ночь\";\n    transition = parseFloat(msg.Разгорание_ночь);\n    brightness_pct = parseFloat(msg.Яркость_ночь);\n}\n\n// Если активирован режим сна\nif (msg.сон === \"on\") {\n    timeOfDay = \"сон\";\n    transition = parseFloat(msg.Разгорание_сон);\n    brightness_pct = parseFloat(msg.Яркость_сон);\n}\n\n// Проверка, определены ли значения transition и brightness_pct\nif (isNaN(transition) || isNaN(brightness_pct)) {\n    // Если значения не определены или не являются числами, устанавливаем значения по умолчанию\n    transition = 5;\n    brightness_pct = 100;\n}\n\n// Вычисление задержки включения гирлянды\nvar delay = transition * 1000; // Переводим transition из секунд в миллисекунды\n\n// Формирование объекта данных для вызова службы light.turn_on\nmsg.payload = {\n    data: {\n        transition: transition,\n        brightness_pct: brightness_pct\n    }\n};\n\n// Добавление задержки включения гирлянды в сообщение\nmsg.delay = delay;\n\n// Формирование отчета\nmsg.Отчёт = `Освещённость = ${msg.Освещённость}, сейчас ${timeOfDay}, настройки для этого времени: яркость ${brightness_pct}, разгорание ${transition}. Задержка = ${delay} мс`;\n\nreturn msg;\n",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1150,
-        "y": 560,
-        "wires": [
-            [
-                "95776bd787502879"
-            ]
-        ]
-    },
-    {
-        "id": "0329d899525aa81f",
-        "type": "function",
-        "z": "445b222ce59de656",
-        "name": "function 16",
-        "func": "const reason = msg.Отчёт || \"\"; // Получаем значение reason из сообщения, если оно существует\nmsg.payload = reason; // Присваиваем значению reason в поле payload для передачи в MQTT\nreturn msg; // Возвращаем обновленное сообщение\n",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1150,
-        "y": 680,
-        "wires": [
-            [
-                "48743e549a4f3128"
-            ]
-        ]
-    },
-    {
-        "id": "48743e549a4f3128",
-        "type": "mqtt out",
-        "z": "445b222ce59de656",
-        "name": "",
-        "topic": "Light/reason",
-        "qos": "",
-        "retain": "true",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "05243882f0f347ef",
-        "x": 1150,
-        "y": 740,
-        "wires": []
-    },
-    {
-        "id": "8f7ec30115d2054a",
-        "type": "api-current-state",
-        "z": "445b222ce59de656",
-        "name": "Разгорание день",
-        "server": "d1cf8bd60e4ddc69",
-        "version": 3,
-        "outputs": 1,
-        "halt_if": "",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "input_number.osveshchenie_razgoranie_dniom",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            },
-            {
-                "property": "Разгорание_день",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            }
-        ],
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "override_topic": false,
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "x": 1050,
-        "y": 1220,
-        "wires": [
-            [
-                "e7944afa9997a5e5"
-            ]
-        ]
-    },
-    {
-        "id": "8894548a0af30701",
-        "type": "api-current-state",
-        "z": "445b222ce59de656",
-        "name": "Яркость день",
-        "server": "d1cf8bd60e4ddc69",
-        "version": 3,
-        "outputs": 1,
-        "halt_if": "",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "input_number.osveshchenie_iarkost_dniom",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            },
-            {
-                "property": "Яркость_день",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            }
-        ],
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "override_topic": false,
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "x": 820,
-        "y": 1220,
-        "wires": [
-            [
-                "31e5185de8f9c21d"
-            ]
-        ]
-    },
-    {
-        "id": "3e274383bbea947f",
-        "type": "api-current-state",
-        "z": "445b222ce59de656",
-        "name": "Освещённость",
-        "server": "d1cf8bd60e4ddc69",
-        "version": 3,
-        "outputs": 1,
-        "halt_if": "",
-        "halt_if_type": "num",
-        "halt_if_compare": "is",
-        "entity_id": "sensor.obshchaia_osveshchionnost",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            },
-            {
-                "property": "Освещённость",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            }
-        ],
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "override_topic": false,
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "x": 580,
-        "y": 1220,
-        "wires": [
-            [
-                "b1a80cb0c579009d"
-            ]
-        ]
-    },
-    {
-        "id": "b1a80cb0c579009d",
-        "type": "api-current-state",
-        "z": "445b222ce59de656",
-        "name": "Сон вкл",
-        "server": "d1cf8bd60e4ddc69",
-        "version": 3,
-        "outputs": 1,
-        "halt_if": "",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "input_boolean.rezhim_son",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            },
-            {
-                "property": "сон",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            }
-        ],
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "override_topic": false,
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "x": 600,
-        "y": 1280,
-        "wires": [
-            [
-                "8894548a0af30701"
-            ]
-        ]
-    },
-    {
-        "id": "31e5185de8f9c21d",
-        "type": "api-current-state",
-        "z": "445b222ce59de656",
-        "name": "Яркость вечер",
-        "server": "d1cf8bd60e4ddc69",
-        "version": 3,
-        "outputs": 1,
-        "halt_if": "",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "input_number.osveshchenie_iarkost_vecherom",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            },
-            {
-                "property": "Яркость_вечер",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            }
-        ],
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "override_topic": false,
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "x": 820,
-        "y": 1260,
-        "wires": [
-            [
-                "0d571f13e4b754df"
-            ]
-        ]
-    },
-    {
-        "id": "0d571f13e4b754df",
-        "type": "api-current-state",
-        "z": "445b222ce59de656",
-        "name": "Яркость ночь",
-        "server": "d1cf8bd60e4ddc69",
-        "version": 3,
-        "outputs": 1,
-        "halt_if": "",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "input_number.osveshchenie_iarkost_nochiu",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            },
-            {
-                "property": "Яркость_ночь",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            }
-        ],
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "override_topic": false,
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "x": 820,
-        "y": 1300,
-        "wires": [
-            [
-                "bcaeb051f132eca4"
-            ]
-        ]
-    },
-    {
-        "id": "bcaeb051f132eca4",
-        "type": "api-current-state",
-        "z": "445b222ce59de656",
-        "name": "Яркость сон",
-        "server": "d1cf8bd60e4ddc69",
-        "version": 3,
-        "outputs": 1,
-        "halt_if": "",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "input_number.osveshchenie_iarkost_son",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            },
-            {
-                "property": "Яркость_сон",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            }
-        ],
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "override_topic": false,
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "x": 810,
-        "y": 1340,
-        "wires": [
-            [
-                "8f7ec30115d2054a"
-            ]
-        ]
-    },
-    {
-        "id": "e7944afa9997a5e5",
-        "type": "api-current-state",
-        "z": "445b222ce59de656",
-        "name": "Разгорание вечер",
-        "server": "d1cf8bd60e4ddc69",
-        "version": 3,
-        "outputs": 1,
-        "halt_if": "",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "input_number.osveshchenie_razgoranie_vecherom",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            },
-            {
-                "property": "Разгорание_вечер",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            }
-        ],
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "override_topic": false,
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "x": 1050,
-        "y": 1260,
-        "wires": [
-            [
-                "a1615213cea4d040"
-            ]
-        ]
-    },
-    {
-        "id": "a1615213cea4d040",
-        "type": "api-current-state",
-        "z": "445b222ce59de656",
-        "name": "Разгорание ночь",
-        "server": "d1cf8bd60e4ddc69",
-        "version": 3,
-        "outputs": 1,
-        "halt_if": "",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "input_number.osveshchenie_razgoranie_nochiu",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            },
-            {
-                "property": "Разгорание_ночь",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            }
-        ],
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "override_topic": false,
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "x": 1050,
-        "y": 1300,
-        "wires": [
-            [
-                "aeca55e4073a69e8"
-            ]
-        ]
-    },
-    {
-        "id": "aeca55e4073a69e8",
-        "type": "api-current-state",
-        "z": "445b222ce59de656",
-        "name": "Разгорание сон",
-        "server": "d1cf8bd60e4ddc69",
-        "version": 3,
-        "outputs": 1,
-        "halt_if": "",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "input_number.osveshchenie_razgoranie_son",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            },
-            {
-                "property": "Разгорание_сон",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            }
-        ],
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "override_topic": false,
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "x": 1040,
-        "y": 1340,
-        "wires": [
-            [
-                "a48074ea758c9196"
-            ]
-        ]
-    },
-    {
-        "id": "2221bcac1fccbb09",
-        "type": "api-call-service",
-        "z": "445b222ce59de656",
-        "name": "Свет в ванной",
-        "server": "d1cf8bd60e4ddc69",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "light",
-        "service": "turn_on",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "light.yeelink_color5_7325_light",
-            "light.torsherik"
-        ],
-        "data": "{\t    \"transition\": time,\t    \"brightness_pct\": bright\t}\t",
-        "dataType": "jsonata",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 1275.9999771118164,
-        "y": 1278.0000190734863,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "a48074ea758c9196",
-        "type": "function",
-        "z": "445b222ce59de656",
-        "name": "function 20",
-        "func": "// Функция для автоматического определения параметров освещения и передачи соответствующих значений\nvar brightness_pct = 100; // Значение яркости по умолчанию\nvar transition = 5; // Значение времени перехода по умолчанию\nvar timeOfDay = \"\"; // Время суток\n\n// Определение времени суток на основе текущей освещенности\nif (msg.Освещённость >= 60) { // День\n    timeOfDay = \"день\";\n    transition = parseFloat(msg.Разгорание_день);\n    brightness_pct = parseFloat(msg.Яркость_день);\n} else if (msg.Освещённость >= 40) { // Вечер\n    timeOfDay = \"вечер\";\n    transition = parseFloat(msg.Разгорание_вечер);\n    brightness_pct = parseFloat(msg.Яркость_вечер);\n} else { // Ночь\n    timeOfDay = \"ночь\";\n    transition = parseFloat(msg.Разгорание_ночь);\n    brightness_pct = parseFloat(msg.Яркость_ночь);\n}\n\n// Если активирован режим сна\nif (msg.сон === \"on\") {\n    timeOfDay = \"сон\";\n    transition = parseFloat(msg.Разгорание_сон);\n    brightness_pct = parseFloat(msg.Яркость_сон);\n}\n\n// Проверка, определены ли значения transition и brightness_pct\nif (isNaN(transition) || isNaN(brightness_pct)) {\n    // Если значения не определены или не являются числами, устанавливаем значения по умолчанию\n    transition = 5;\n    brightness_pct = 100;\n}\n\n// Вычисление задержки включения гирлянды\nvar delay = transition * 1000; // Переводим transition из секунд в миллисекунды\n\n// Формирование объекта данных для вызова службы light.turn_on\nmsg.payload = {\n    data: {\n        transition: transition,\n        brightness_pct: brightness_pct\n    }\n};\n\n// Добавление задержки включения гирлянды в сообщение\nmsg.delay = delay;\n\n// Формирование отчета\nmsg.Отчёт = `Освещённость = ${msg.Освещённость}, сейчас ${timeOfDay}, настройки для этого времени: яркость ${brightness_pct}, разгорание ${transition}. Задержка = ${delay} мс`;\n\nreturn msg;\n",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1265.9999771118164,
-        "y": 1218.0000190734863,
-        "wires": [
-            [
-                "2221bcac1fccbb09"
-            ]
-        ]
-    },
-    {
         "id": "53d0b90a5476cfc8",
         "type": "api-current-state",
         "z": "445b222ce59de656",
@@ -2952,7 +1018,7 @@
         "entity_location": "data",
         "override_data": "msg",
         "x": 930,
-        "y": 960,
+        "y": 400,
         "wires": [
             [
                 "78682df2e2af89e8"
@@ -3002,7 +1068,7 @@
         "entity_location": "data",
         "override_data": "msg",
         "x": 700,
-        "y": 960,
+        "y": 400,
         "wires": [
             [
                 "94db4a3a121c2407"
@@ -3052,7 +1118,7 @@
         "entity_location": "data",
         "override_data": "msg",
         "x": 460,
-        "y": 960,
+        "y": 400,
         "wires": [
             [
                 "0dcba0b2e588ab29"
@@ -3102,7 +1168,7 @@
         "entity_location": "data",
         "override_data": "msg",
         "x": 480,
-        "y": 1020,
+        "y": 460,
         "wires": [
             [
                 "5365b82e6941533a"
@@ -3152,7 +1218,7 @@
         "entity_location": "data",
         "override_data": "msg",
         "x": 700,
-        "y": 1000,
+        "y": 440,
         "wires": [
             [
                 "0c4a20014871b6b9"
@@ -3202,7 +1268,7 @@
         "entity_location": "data",
         "override_data": "msg",
         "x": 700,
-        "y": 1040,
+        "y": 480,
         "wires": [
             [
                 "43260335992b8eab"
@@ -3252,7 +1318,7 @@
         "entity_location": "data",
         "override_data": "msg",
         "x": 690,
-        "y": 1080,
+        "y": 520,
         "wires": [
             [
                 "53d0b90a5476cfc8"
@@ -3302,7 +1368,7 @@
         "entity_location": "data",
         "override_data": "msg",
         "x": 930,
-        "y": 1000,
+        "y": 440,
         "wires": [
             [
                 "f25d22027f31b8e3"
@@ -3352,7 +1418,7 @@
         "entity_location": "data",
         "override_data": "msg",
         "x": 930,
-        "y": 1040,
+        "y": 480,
         "wires": [
             [
                 "5ec034a388fae31a"
@@ -3402,7 +1468,7 @@
         "entity_location": "data",
         "override_data": "msg",
         "x": 920,
-        "y": 1080,
+        "y": 520,
         "wires": [
             [
                 "363b80d3942bde49"
@@ -3431,7 +1497,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1155.9999771118164,
-        "y": 1018.0000190734863,
+        "y": 458.0000190734863,
         "wires": [
             []
         ]
@@ -3449,7 +1515,7 @@
         "finalize": "",
         "libs": [],
         "x": 1145.9999771118164,
-        "y": 958.0000190734863,
+        "y": 398.0000190734863,
         "wires": [
             [
                 "955a01cd7a84f0f7"
@@ -3480,39 +1546,6 @@
         "enableGlobalContextStore": false
     },
     {
-        "id": "e86c513e9c26ac81",
-        "type": "ha-entity-config",
-        "server": "d1cf8bd60e4ddc69",
-        "deviceConfig": "",
-        "name": "nr_svet_kuh",
-        "version": "6",
-        "entityType": "switch",
-        "haConfig": [
-            {
-                "property": "name",
-                "value": "nr_svet_kuh"
-            },
-            {
-                "property": "icon",
-                "value": "mdi:home-automation"
-            },
-            {
-                "property": "entity_picture",
-                "value": ""
-            },
-            {
-                "property": "entity_category",
-                "value": ""
-            },
-            {
-                "property": "device_class",
-                "value": "switch"
-            }
-        ],
-        "resend": false,
-        "debugEnabled": false
-    },
-    {
         "id": "8d9d63517052865a",
         "type": "ha-entity-config",
         "server": "d1cf8bd60e4ddc69",
@@ -3524,39 +1557,6 @@
             {
                 "property": "name",
                 "value": "nr_svet_prih"
-            },
-            {
-                "property": "icon",
-                "value": "mdi:home-automation"
-            },
-            {
-                "property": "entity_picture",
-                "value": ""
-            },
-            {
-                "property": "entity_category",
-                "value": ""
-            },
-            {
-                "property": "device_class",
-                "value": "switch"
-            }
-        ],
-        "resend": false,
-        "debugEnabled": false
-    },
-    {
-        "id": "8d31c4e60da2b0d1",
-        "type": "ha-entity-config",
-        "server": "d1cf8bd60e4ddc69",
-        "deviceConfig": "",
-        "name": "nr_svet_vann",
-        "version": "6",
-        "entityType": "switch",
-        "haConfig": [
-            {
-                "property": "name",
-                "value": "nr_svet_vann"
             },
             {
                 "property": "icon",
@@ -3606,39 +1606,6 @@
             {
                 "property": "device_class",
                 "value": "switch"
-            }
-        ],
-        "resend": false,
-        "debugEnabled": false
-    },
-    {
-        "id": "7427c31c14152555",
-        "type": "ha-entity-config",
-        "server": "d1cf8bd60e4ddc69",
-        "deviceConfig": "",
-        "name": "nr_svet_table",
-        "version": "6",
-        "entityType": "switch",
-        "haConfig": [
-            {
-                "property": "name",
-                "value": "nr_svet_table"
-            },
-            {
-                "property": "icon",
-                "value": "mdi:home-automation"
-            },
-            {
-                "property": "entity_picture",
-                "value": ""
-            },
-            {
-                "property": "entity_category",
-                "value": ""
-            },
-            {
-                "property": "device_class",
-                "value": ""
             }
         ],
         "resend": false,
@@ -3742,36 +1709,5 @@
         ],
         "resend": false,
         "debugEnabled": false
-    },
-    {
-        "id": "05243882f0f347ef",
-        "type": "mqtt-broker",
-        "name": "",
-        "broker": "core-mosquitto",
-        "port": "1883",
-        "clientid": "",
-        "autoConnect": true,
-        "usetls": false,
-        "protocolVersion": "3",
-        "keepalive": "60",
-        "cleansession": true,
-        "autoUnsubscribe": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthRetain": "false",
-        "birthPayload": "",
-        "birthMsg": {},
-        "closeTopic": "",
-        "closeQos": "0",
-        "closeRetain": "false",
-        "closePayload": "",
-        "closeMsg": {},
-        "willTopic": "",
-        "willQos": "0",
-        "willRetain": "false",
-        "willPayload": "",
-        "willMsg": {},
-        "userProps": "",
-        "sessionExpiry": ""
     }
 ]
